@@ -1,4 +1,4 @@
-## dim.py 菱形  
+## diamond.py 菱形  
 ![](https://i.imgur.com/vGJMS6k.png)
 
 ## rotate.py 繞圈  
