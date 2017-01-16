@@ -6,3 +6,6 @@
 
 ## mul_table.py 乘法表  
 ![](https://i.imgur.com/ozPZsDh.png)
+
+## mul_table2.py 乘法表2
+![](https://i.imgur.com/lvrEqVd.png)
