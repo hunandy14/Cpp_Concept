@@ -1,16 +1,35 @@
-﻿# encoding: utf-8
+﻿#-*- coding: utf-8 -*-　　 
+#-*- coding: cp950 -*-　
+# ===============================================================
+# Name : rotate.py
+# Date : 2017/01/13
+# By   : CharlotteHonG
+# Final: 2017/01/14
 # ===============================================================
 # 引入python3的print
 from __future__ import print_function
 # ===============================================================
-# 筆記：
+# 修正：
 # 1. [v]跑幾次的偵測
 # 2. [v]找最長邊
-# 3. []改良任意點開始繞
+# 3. [v]改良任意點開始繞
 # 4. []反繞
+# 5. [v]預設建構size
+# 6. [v]run()自訂從哪裡開始
+# 7. [v]pri()新增tile
+# Bug：
+# 1. [v]建構參數其中一個為1時會出問題 
+#       修正[1,2]意外解決這項了
+# 2. []無法傳入中文，但可用 print()印出中文，不知道原因
+# ===============================================================
+# 記事：
+# 1. 有些bug是因為不足夠嚴謹的邏輯造成的，足夠嚴謹的邏輯絕對不是為了裝逼，
+#       而是為了下一個人好(通常這個人是未來的自己)
+# ===============================================================
+
 class Rotate:
     # 初始化
-    def __init__(self, height, width):
+    def __init__(self, height=4, width=4):
         # 引入參數
         self.height = height
         self.width  = width
@@ -19,11 +38,12 @@ class Rotate:
         self.idx_y, self.idx_x = -1, -1
         self.star = 0
         self.num = self.star
-        # 最長邊
-        # self.len
+        # 初始化紀錄
+        self.init = 1
         return
     # 印出
-    def pri(self):
+    def pri(self, name="Rotate"):
+        print(name)
         for y in xrange(self.height):
             for x in xrange(self.width):
                 pass
@@ -31,6 +51,7 @@ class Rotate:
                     self.arr[y][x]), end=('')
                 );
             print()
+        print()
         return
     # 核心程式
     def run_core(self, director):
@@ -60,7 +81,8 @@ class Rotate:
                 if self.arr[self.idx_y][self.idx_x] != -1:
                     # print ("0越界")
                     # 0越界- 補償
-                    self.idx_y, self.idx_x = self.idx_y-diry, self.idx_x-dirx
+                    self.idx_y, self.idx_x = \
+                        self.idx_y-diry, self.idx_x-dirx
             # 長度越界
             except:
                 # print("長度越界")
@@ -71,24 +93,53 @@ class Rotate:
                 return
         return
     # 跑一圈
-    def run_once(self):
-        self.run_core([0,1])
-        self.run_core([1,0])
-        self.run_core([0,-1])
-        self.run_core([-1,0])
+    def run_once(self, pos=0):
+        # 超出範圍修正
+        if pos != xrange(3):
+            pos=0
+        # pos控制第一輪由哪個開始
+        if self.init==0 or pos==0:
+            self.run_core([0,1])
+            self.init=0
+        if self.init==0 or pos==1:
+            self.run_core([1,0])
+            self.init=0
+        if self.init==0 or pos==2:
+            self.run_core([0,-1])
+            self.init=0
+        if self.init==0 or pos==3:
+            self.run_core([-1,0])
+            self.init=0
         return
     # 跑全部
-    def run(self):
+    def run(self, star=0, pos=0):
+        # 不可小於0
+        if star < 0:
+            print("* Error init number fix to 0")
+            star=0
+        # 從多少開始
+        self.star = star
+        self.num = self.star
+        # 修正初始位置
+        if pos == 1:
+            self.idx_x = self.width-1
+        elif pos == 2:
+            self.idx_x = self.width-1
+            self.idx_y = self.height-1
+        elif pos == 3:
+            self.idx_y = self.height-1
+        # 跑最短邊/2+1次
         for x in xrange(min(self.height, self.width)/2+1):
-            self.run_once()
+            self.run_once(pos)
         return
 # ===============================================================
 # 主程式
 def main():
     # 建立物件
-    rot = Rotate(5, 5)
-    rot.run()
+    rot = Rotate(4, 4)
     rot.pri()
+    rot.run(1)
+    rot.pri("form 0 init")
 # ===============================================================
 # 本地程式
 if __name__ == '__main__':
