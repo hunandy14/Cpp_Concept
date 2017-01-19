@@ -1,5 +1,5 @@
 /*****************************************************************
-Name : 
+Name :
 Date : 2017/01/19
 By   : CharlotteHonG
 Final: 2017/01/19
@@ -16,7 +16,7 @@ int main(int argc, char const *argv[]){
 	}
 	// 釋放
 	for (int i = 0; i < y; ++i){
-		delete [] arr[i];	
+		delete [] arr[i];
 	} delete [] arr;
 
 	return 0;

@@ -119,7 +119,7 @@ class Rotate:
 def main():
     # 建立物件
     rot = Rotate(4, 4)
-    rot.run(1, 1)
+    rot.run(0, 0)
     rot.pri("form 0 init")
 # ===============================================================
 # 本地程式

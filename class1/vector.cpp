@@ -9,12 +9,19 @@ Final: 2017/01/19
 using namespace std;
 /*==============================================================*/
 int main(int argc, char const *argv[]){
-	int len=7;
-	vector<int> v(len);
+    // int len=7;
+    // vector<int> v(len);
 
-	for (unsigned i = 0; i < v.size(); ++i){
-		cout << v[i] << ",";
-	}
-	return 0;
+    // for (unsigned i = 0; i < v.size(); ++i){
+    //  cout << v[i] << ",";
+    // }
+
+    int y=3, x=4;
+    vector<vector<int>> arr(y);
+    for (int i = 0; i < y; ++i){
+        arr[0].resize(x);
+    }
+    
+    return 0;
 }
 /*==============================================================*/
