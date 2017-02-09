@@ -18,10 +18,9 @@ int main(int argc, char const *argv[]){
     list->next = new Node;
     // 第二點
     list->next->data = 2;
-    list->next->next = new Node;
+    list->next->next = nullptr;
     // 印出
-    pri(list);
-    pri(list->next);
+    pri_all(list);
     return 0;
 }
 /*==============================================================*/

@@ -10,3 +10,15 @@ using namespace std;
 void pri(Node* n){
     cout << n->data << endl;
 }
+// 印出所有節點
+void pri_all(Node* n){
+    while(1) {
+        if(n == nullptr) {
+            break;
+        } else {
+            cout << n->data << ", ";
+            n = n->next;
+        }
+    } cout << endl;
+    return;
+}

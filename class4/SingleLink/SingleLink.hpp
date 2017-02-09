@@ -4,8 +4,8 @@ Date : 2017/02/04
 By   : CharlotteHonG
 Final: 2017/02/04
 *****************************************************************/
-#ifndef SOURCE_HPP
-#define SOURCE_HPP
+#ifndef SINGLELINK_HPP
+#define SINGLELINK_HPP
 //----------------------------------------------------------------
 // 結構
 struct Node {
