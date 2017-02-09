@@ -9,7 +9,7 @@ using namespace std;
 /*=======================================================*/
 int main(int argc, char const *argv[]){
 	void* p = new char('A');
-	cout << "p=" << *(int*)p << endl;
+	cout << "p=" << (int)*(char*)p << endl;
 	return 0;
 }
 /*=======================================================*/
