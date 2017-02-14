@@ -11,21 +11,23 @@ using namespace std;
 class SingleLink{
 public:
     // 建構子
-    SingleLink(int n)
-    : num(n){}
+    SingleLink(int n, int n2)
+    : num(n), num2(n2){}
 public:
     // 方法
     void pri();
 private:
     int num;
+    int num2;
 };
 // cpp
 void SingleLink::pri(){
     cout << "num=" << this->num << endl;
+    cout << "num=" << this->num2 << endl;
 }
 /*==============================================================*/
 int main(int argc, char const *argv[]){
-    SingleLink a(7);
+    SingleLink a(7, 8);
     a.pri();
     return 0;
 }
