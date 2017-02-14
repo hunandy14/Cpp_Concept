@@ -12,25 +12,29 @@ Final: 2016/11/19
 int main(int argc, char const *argv[]){
     rand_init();
     // 創建陣列
-    Node* list = create(dint(-1));
-    for (int i = 0; i < arr_len; ++i)
-        append(list, dint(i));
-    pri_all(list);
+    Head* list = Node_create(dint(-1));
+    // 填值
+    for (int i = arr_len-1; i > 0; --i)
+        Node_append(list, dint(i));
+    Node_pri_all(list);
     // 位置1 插入77
-    insert_data(list, 1, dint(77));
-    pri_all(list);
+    Node_insert_data(list, 1, dint(77));
+    Node_pri_all(list);
     // 位置1 刪除
-    del(list, 1);
-    pri_all(list);
+    Node_del(list, 1);
+    Node_pri_all(list);
     // 隨機存取
     for (int i = 0; i < 10; ++i){
         int rand = rand_int(0, arr_len);
-        pri(at(list, rand));
+        Node_pri(Node_at(list, rand));
     }
     printf("\n");
+    // 排序
+    Node_sort(list);
+    Node_pri_all(list);
     // 刪除全部
-    del_all(list);
-    pri_all(list);
+    Node_del_all(list);
+    Node_pri_all(list);
     // 釋放
     free(list);
     return 0;
