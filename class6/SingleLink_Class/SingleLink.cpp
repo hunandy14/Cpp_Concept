@@ -7,9 +7,14 @@ Final: 2017/02/14
 #include "SingleLink.hpp"
 //----------------------------------------------------------------
 namespace sgl {
+// 建構子
 SinLink::SinLink(){
     this->rand_init();
     this->head = Node_create(dint(-1));
+}
+// 解構子
+SinLink::~SinLink(){
+    delete [] this->head;
 }
 //----------------------------------------------------------------
 // 初始化亂數種子

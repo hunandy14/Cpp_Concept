@@ -23,6 +23,7 @@ public:
     }; using Head = Node;
 public:
     SinLink();
+    ~SinLink();
 public:
     // 初始化亂數種子
     int rand_int(int low, int up);
@@ -42,8 +43,6 @@ public:
     Node* Node_at(int idx);
     // 插入資料
     void Node_insert_data(size_t idx, int data);
-    // 移出節點
-    Node* Node_unlink(size_t idx);
     // 刪除節點
     void Node_del(size_t idx);
 public:
@@ -58,6 +57,8 @@ public:
 public:
     // 插入節點
     void Node_insert(Node* n, Node* n2);
+    // 移出節點
+    Node* Node_unlink(size_t idx);
     // 交換
     void Node_change(size_t idx);
     // 存取整數地址
@@ -67,8 +68,5 @@ public:
 public:
     Head* head;
 };
-
-
-
 } // sgl
 #endif
