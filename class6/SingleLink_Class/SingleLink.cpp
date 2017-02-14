@@ -8,9 +8,8 @@ Final: 2017/02/14
 //----------------------------------------------------------------
 namespace sgl {
 // 建構子
-SinLink::SinLink(){
+SinLink::SinLink(): head(Node_create(dint(-1))){
     this->rand_init();
-    this->head = Node_create(dint(-1));
 }
 // 解構子
 SinLink::~SinLink(){

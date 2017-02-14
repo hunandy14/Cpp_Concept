@@ -66,7 +66,7 @@ public:
     // 排序
     void Node_sort();
 public:
-    Head* head;
+    Head* const head;
 };
 } // sgl
 #endif
