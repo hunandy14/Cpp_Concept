@@ -6,8 +6,7 @@ Final: 2017/02/14
 *****************************************************************/
 #include <iostream>
 using namespace std;
-
-// hpp
+// hpp 函式宣告
 class SingleLink{
 public:
     // 建構子
@@ -20,7 +19,7 @@ private:
     int num;
     int num2;
 };
-// cpp
+// cpp 函式定義
 void SingleLink::pri(){
     cout << "num=" << this->num << endl;
     cout << "num=" << this->num2 << endl;
