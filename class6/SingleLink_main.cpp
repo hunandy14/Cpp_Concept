@@ -10,7 +10,6 @@ Final: 2017/02/14
 
 using namespace std;
 using namespace sgl;
-
 #define arr_len 10
 
 int main(int argc, char const *argv[]){
