@@ -1,8 +1,8 @@
 /*****************************************************************
-Name : 
+Name :
 Date : 2016/11/19
 By   : CharlotteHonG
-Final: 2016/11/19
+Final: 2017/02/14
 *****************************************************************/
 #include <stdlib.h>
 #include <stdio.h>
@@ -118,7 +118,7 @@ void Node_append(Node* n, int* data){
 void Node_pri_all(Node* n){
     for (int i = 0; i < Node_len(n); ++i){
         Node_pri(Node_at(n, i));
-    } 
+    }
     printf("[len = %I64u]\n", Node_len(n));
 }
 // 刪除全部
