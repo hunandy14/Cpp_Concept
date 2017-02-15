@@ -17,22 +17,21 @@ int main(int argc, char const *argv[]){
     SinLink list;
     // 填值
     for (int i = arr_len-1; i > 0; --i)
-        list.Node_append(i);
-    list.Node_pri_all();
+        list.append(i);
+    list.pri_all();
     // 位置1 插入77
-    list.Node_insert_data(1, 77);
-    list.Node_pri_all();
+    list.insert_data(1, 77);
+    list.pri_all();
     // 位置1 刪除
-    list.Node_del(1);
-    list.Node_pri_all();
+    list.del(1);
+    list.pri_all();
     // 隨機存取
-    for (int i = 0; i < 10; ++i){
-        int rand = list.rand_int(0, arr_len);
-        list.Node_pri(list.Node_at(rand));
-    }cout << endl;
+    for (int i = 0; i < 10; ++i)
+        cout << setw(3) << list.at_rand() << ",";
+    cout << endl;
     // 排序
-    list.Node_sort();
-    list.Node_pri_all();
+    list.sort();
+    list.pri_all();
     return 0;
 }
 /*=======================================================*/

@@ -7,16 +7,16 @@ Final: 2017/02/14
 #ifndef SINGLELINK_HPP
 #define SINGLELINK_HPP value
 
+
 #include <iostream>
 #include <iomanip>
 #include <ctime>
 using namespace std;
 
 namespace sgl {
-//----------------------------------------------------------------
 // 結構
 class SinLink{
-public:
+private:
     struct Node {
         void* data;
         Node* next; 
@@ -24,49 +24,54 @@ public:
 public:
     SinLink();
     ~SinLink();
-public:
-    // 初始化亂數種子
-    int rand_int(int low, int up);
+// 基本功能
+private:
     // 取亂數(不包含up)
+    int rand_int(int low, int up);
+    // 初始化亂數種子
     void rand_init();
     // 動態整數
     int* dint(int data);
     // 創建節點
-    Node* Node_create(int* data);
-public:
-    // 印出節點
-    void Node_pri(Node* n);
+    Node* create(int* data);
     // 查找長度
-    size_t Node_len();
-public:
+    size_t len();
     // 存取地址
-    Node* Node_at(int idx);
-    // 插入資料
-    void Node_insert_data(size_t idx, int data);
-    // 刪除節點
-    void Node_del(size_t idx);
-public:
+    Node* at(int idx);
     // 找結尾
-    Node* Node_tail();
-    // 從尾端加入
-    void Node_append(int data);
+    Node* tail();
+    // 印出節點
+    void pri(Node* n);
+public:
     // 印出全部
-    void Node_pri_all();
+    void pri_all();
+    // 從尾端加入
+    void append(int data);
+    // 插入資料
+    void insert_data(size_t idx, int data);
+    // 隨機存取整數
+    int& at_rand();
+    // 刪除節點
+    void del(size_t idx);
     // 刪除全部
-    void Node_del_all();
-public:
+    void del_all();
+// 排序
+private:
     // 插入節點
-    void Node_insert(Node* n, Node* n2);
+    void insert(Node* n, Node* n2);
     // 移出節點
-    Node* Node_unlink(size_t idx);
+    Node* unlink(size_t idx);
     // 交換
-    void Node_change(size_t idx);
+    void change(size_t idx);
     // 存取整數地址
-    int* Node_at_int(int idx);
-    // 排序
-    void Node_sort();
+    int* at_int(int idx);
 public:
+    // 排序
+    void sort();
+private:
     Head* const head;
 };
 } // sgl
+
+
 #endif
