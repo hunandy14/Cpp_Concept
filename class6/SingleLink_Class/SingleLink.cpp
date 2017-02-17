@@ -13,7 +13,7 @@ SinLink::SinLink(): head(create(dint(-1))){
 }
 // 解構子
 SinLink::~SinLink(){
-    delete [] this->head;
+    this->del_all();
 }
 //----------------------------------------------------------------
 // 取亂數(不包含up)
