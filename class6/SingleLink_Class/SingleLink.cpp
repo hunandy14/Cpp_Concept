@@ -27,7 +27,7 @@ void SinLink::rand_init(){
 }
 // 動態整數
 int* SinLink::dint(int data){
-    int* num = (int*)malloc(sizeof(int));
+    int* num = new int(data);
     *num = data;
     return num;
 }
