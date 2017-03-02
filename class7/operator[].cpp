@@ -52,6 +52,7 @@ int main(int argc, char const *argv[]){
         // cout << a.operator[](i)<< endl;
     } cout << endl;
     b=a;
+    // b.operator=(a);
     b.pri();
     return 0;
 }
