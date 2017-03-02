@@ -29,12 +29,17 @@ public:
     int & operator[](size_t idx){
         return arr[idx];
     }
+    void operator=(Arr rhs){
+        for(unsigned i = 0; i < arr.size(); ++i) {
+            arr[i]=rhs[i];
+        }
+    }
 private:
     vector<int> arr;
 };
 /*==============================================================*/
 int main(int argc, char const *argv[]){
-    Arr a, b;
+    Arr a, b, c;
     a.pri();
     cout << endl;
     // 三個等價
@@ -45,7 +50,9 @@ int main(int argc, char const *argv[]){
     for(unsigned i = 0; i < 5; ++i) {
         cout << a[i]<< ", ";
         // cout << a.operator[](i)<< endl;
-    }
+    } cout << endl;
+    b=a;
+    b.pri();
     return 0;
 }
 /*==============================================================*/
