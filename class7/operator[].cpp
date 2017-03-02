@@ -11,17 +11,23 @@ using namespace std;
 class Arr {
 public:
     Arr(int len=5):arr(len){
-    	for(unsigned i = 1; i < arr.size(); ++i) {
-    	    arr[i]=i;
-    	}
+        for(unsigned i = 1; i < arr.size(); ++i) {
+            arr[i]=i;
+        }
     }
     void pri(){
         for(auto&& i : arr) {
             cout << i << ", ";
         }
     }
+    void set(int idx,int num){
+        arr[idx]=num;
+    }
+    int & at(int idx){
+        return arr[idx];
+    }
     int & operator[](size_t idx){
-    	return arr[idx];
+        return arr[idx];
     }
 private:
     vector<int> arr;
@@ -31,7 +37,11 @@ int main(int argc, char const *argv[]){
     Arr a, b;
     a.pri();
     cout << endl;
+    // 三個等價
+    a.set(0, 7);
+    a.at(0)=7;
     a[0]=7;
+    // 印出
     for(unsigned i = 0; i < 5; ++i) {
         cout << a[i]<< ", ";
         // cout << a.operator[](i)<< endl;
