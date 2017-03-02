@@ -8,29 +8,24 @@ Final: 2017/03/02
 #include <vector>
 using namespace std;
 
-class Arr
-{
+class Arr {
 public:
-    Arr();
+    Arr(int len=5):arr(len){
+    	for(unsigned i = 1; i < arr.size(); ++i) {
+    	    arr[i]=i;
+    	}
+    }
     void pri(){
         for(auto&& i : arr) {
             cout << i << ", ";
         }
     }
-    int & operator[](size_t idx);
-    // Arr operator+(Arr& rhs);
+    int & operator[](size_t idx){
+    	return arr[idx];
+    }
 private:
     vector<int> arr;
 };
-
-Arr::Arr(): arr(5){
-    for(unsigned i = 1; i < arr.size(); ++i) {
-        arr[i]=i;
-    }
-}
-int & Arr::operator[](size_t idx){
-    return arr[idx];
-}
 /*==============================================================*/
 int main(int argc, char const *argv[]){
     Arr a, b;
@@ -41,7 +36,6 @@ int main(int argc, char const *argv[]){
         cout << a[i]<< ", ";
         // cout << a.operator[](i)<< endl;
     }
-
     return 0;
 }
 /*==============================================================*/
