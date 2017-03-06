@@ -1,4 +1,4 @@
-/*****************************************************************
+ï»¿/*****************************************************************
 Name : 
 Date : 2017/03/02
 By   : CharlotteHonG
@@ -17,7 +17,7 @@ public:
         }
     }
     ~Arr(){
-        // cout << "¸Ñºc" << endl;
+        // cout << "è§£æ§‹" << endl;
     }
     void pri(string name=""){
         cout << name << " = ";
@@ -25,7 +25,7 @@ public:
             cout << i << ", ";
         }cout << endl;
     }
-    // ­«¸ü¤U¼Ğ²Å¸¹
+    // é‡è¼‰ä¸‹æ¨™ç¬¦è™Ÿ
     int & operator[](size_t idx){
         // return const_cast<int&>(static_cast<const Arr&>(*this)[idx]);
         return arr[idx];
@@ -33,7 +33,7 @@ public:
     const int & operator[](size_t idx) const{
         return arr[idx];
     }
-    // ­«¸ü+=²Å¸¹
+    // é‡è¼‰+=ç¬¦è™Ÿ
     Arr & operator+=(Arr const &rhs){
         for(unsigned i = 0; i < arr.size(); ++i)
             (*this)[i] += rhs[i];
@@ -42,7 +42,7 @@ public:
 private:
     vector<int> arr;
 };
-// ­«¸ü+²Å¸¹(¥ş°ì¨ç¦¡)
+// é‡è¼‰+ç¬¦è™Ÿ(å…¨åŸŸå‡½å¼)
 Arr operator+(Arr const &lhs, Arr const &rhs){
     return Arr(lhs) += rhs;
 }
@@ -51,10 +51,10 @@ Arr operator+(Arr const &lhs, Arr const &rhs){
 int main(int argc, char const *argv[]){
     Arr a, b, c;
     a.pri("first");
-    // ­«¸ü +=
+    // é‡è¼‰ +=
     a+=b;
     a.pri("a+=b");
-    // ­«¸ü +
+    // é‡è¼‰ +
     a=b+c;
     a.pri("a=b+c");
 
