@@ -4,7 +4,7 @@ Date : 2017/03/02
 By   : CharlotteHonG
 Final: 2017/03/18
 
-1. 為什麼非 const 版本的找不到函式
+1. 為什麼 const 版本的找不到函式
 2. 如何讓 .pri() 連續呼叫
 *****************************************************************/
 #include <iostream>
@@ -20,15 +20,19 @@ public:
         }
     }
     // 印出
-    // void pri(string name=""){
-    //     static_cast<Arr const &>(*this).pri();
-    // }
-    void pri(string name="") const{
+    void pri(string name=""){
         cout << name << " = ";
         for(auto&& i : arr) {
             cout << i << ", ";
         }cout << endl;
+        // static_cast<Arr const &>(*this).pri();
     }
+    // void pri(string name="") const{
+    //     cout << name << " = ";
+    //     for(auto&& i : arr) {
+    //         cout << i << ", ";
+    //     }cout << endl;
+    // }
     // 重載下標符號
     int & operator[](size_t idx){
         return const_cast<int&>(static_cast<const Arr&>(*this)[idx]);
