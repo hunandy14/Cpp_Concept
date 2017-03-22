@@ -3,6 +3,9 @@ Name :
 Date : 2017/03/02
 By   : CharlotteHonG
 Final: 2017/03/18
+
+1. 為什麼非 const 版本的找不到函式
+2. 如何讓 .pri() 連續呼叫
 *****************************************************************/
 #include <iostream>
 #include <vector>
@@ -17,9 +20,9 @@ public:
         }
     }
     // 印出
-    void pri(string name=""){
-        static_cast<Arr const &>(*this).pri();
-    }
+    // void pri(string name=""){
+    //     static_cast<Arr const &>(*this).pri();
+    // }
     void pri(string name="") const{
         cout << name << " = ";
         for(auto&& i : arr) {
@@ -46,7 +49,6 @@ private:
 Arr operator+(Arr const &lhs, Arr const &rhs){
     return Arr(lhs) += rhs;
 }
-
 /*==============================================================*/
 int main(int argc, char const *argv[]){
     Arr a;
@@ -54,6 +56,7 @@ int main(int argc, char const *argv[]){
 
     Arr const b;
     b.pri();
+
     // b.pri()[0];
     // b.pri().pri();
 

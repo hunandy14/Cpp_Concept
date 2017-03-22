@@ -3,6 +3,8 @@ Name :
 Date : 2017/03/06
 By   : CharlotteHonG
 Final: 2017/03/06
+
+1. 為何會同時被修改
 *****************************************************************/
 #include <iostream>
 #include <numeric>
@@ -16,12 +18,15 @@ public:
         // 初始化資源
         iota(list,list+len,1);
     }
-    // 複製建構子
-    // List(const List & rhs);
-    // 解構子
     ~List(){
         delete [] this->list;
     }
+public:
+    // 複製建構子
+    // List(const List & rhs);
+    // 重載賦值符號
+    // List & operator=(const List & rhs);
+    // 解構子
 public:
     // 印出
     List & pri(string name=""){
@@ -32,9 +37,6 @@ public:
         } cout << endl;
         return (*this);
     }
-public:
-    // 重載賦值符號
-    // List & operator=(const List & rhs);
 public:
     int* list;
     size_t len;
