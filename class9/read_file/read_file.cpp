@@ -34,7 +34,7 @@ void read(string filename, vector<uch> & img_data) {
     img.seekg(0, ios::beg);
     // 讀取值
     img_data.vector::resize(filesize);
-    img.read((char*)&img_data[0], filesize);
+    img.read(reinterpret_cast<char*>(&img_data[0]), filesize);
     img.close();
 }
 // 將記憶體資料匯出
