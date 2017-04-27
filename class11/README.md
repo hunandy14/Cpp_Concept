@@ -2,6 +2,9 @@
 資料結構為 char* 不可更動
 
 ## 2. 完成圖片的放大縮小
+開圖軟體：http://www.azofreeware.com/2012/03/irfanview-432.html
+
+
 假設一張圖原本的像素是
 
 ```t
