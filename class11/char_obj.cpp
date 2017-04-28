@@ -5,27 +5,30 @@ By   : CharlotteHonG
 Final: 2017/04/27
 *****************************************************************/
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 class Str{
 public:
-    Str();
-    ~Str();
-private:
+    Str(){}
+    ~Str(){}
+public:
     char* s;
 };
 //================================================================
 int main(int argc, char const *argv[]){
-    Str a="Hello World！";
+    Str a="Hello World!";
     Str b=a;
-    str c;
-    c = a+b; // c is "Hello World！" x2
+    Str c;
+    c = a+b; // c is "Hello World!Hello World!"
 
-    // print "Hello World！" x2
-    for (int i = 0; i < c.size(); ++i){
+    // print c and modify c
+    for (unsigned i = 0; i < c.size(); ++i){
         cout << c[i];
+        c[i] = (i+65);
     }cout << endl;
 
+    c.pri(); // print modified c
     return 0;
 }
 //================================================================
