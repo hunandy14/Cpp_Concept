@@ -1,5 +1,8 @@
 ## 1. 依照指定的介面完成程序
-資料結構為 char* 不可更動
+資料結構為 char* 不可更動  
+
+正確結果  
+![](https://github.com/hunandy14/Cpp_Concept/blob/master/class11/Str.png)
 
 ## 2. 完成圖片的放大縮小
 開圖軟體：http://www.azofreeware.com/2012/03/irfanview-432.html
