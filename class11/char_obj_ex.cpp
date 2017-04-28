@@ -26,7 +26,8 @@ int main(int argc, char const *argv[]){
     for (unsigned i = 0; i < c.size(); ++i){
         cout << c[i];
         c[i] = (i+65);
-    }cout << endl;
+    } c += "\n\0";
+    cout << endl;
 
     c.pri(); // print modified c
     return 0;
