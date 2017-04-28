@@ -28,8 +28,14 @@ int main(int argc, char const *argv[]){
         c[i] = (i+65);
     } c += "\n\0";
     cout << endl;
-
     c.pri(); // print modified c
+
+    c.resize(3);
+    c.pri();
+    c.resize(4);
+    c += 'D';
+    c.pri();
+    return 0;
     return 0;
 }
 //================================================================
