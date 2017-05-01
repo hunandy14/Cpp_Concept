@@ -5,7 +5,8 @@
 ![](https://github.com/hunandy14/Cpp_Concept/blob/master/class11/Str.png)
 
 ## 2. 完成圖片的放大縮小
-開圖軟體：http://www.azofreeware.com/2012/03/irfanview-432.html
+開圖軟體：http://www.irfanview.com/
+要開raw檔兩個都要抓下來安裝(irfanview與plugins)
 
 
 假設一張圖原本的像素是
