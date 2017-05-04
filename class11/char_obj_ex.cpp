@@ -24,8 +24,7 @@ int main(int argc, char const *argv[]){
     Str c;
     c = a+b; // c is "Hello World!Hello World!"
 
-    // print c and modify c
-    for (unsigned i = 0; i < c.size(); ++i){
+    for(unsigned i = 0; i < c.size(); ++i){
         cout << c[i];
         c[i] = (i+65);
     } c += "YZ\n\0";
@@ -38,7 +37,11 @@ int main(int argc, char const *argv[]){
     c += 'D';
     cout << c << endl;
     c += c;
-    cout << c << endl;
+
+    const Str& d=c;
+    for(unsigned i = 0; i < d.size(); ++i){
+        cout << d[i];
+    } cout << endl;
     return 0;
 }
 //================================================================
