@@ -1,6 +1,8 @@
 ## 1. 依照指定的介面完成程序
 資料結構為 char* 不可更動  
 
+> 注意：資料成員已修改為private屬性
+
 正確結果  
 ![](https://github.com/hunandy14/Cpp_Concept/blob/master/class11/Str.png)
 
