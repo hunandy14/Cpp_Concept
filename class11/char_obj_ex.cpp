@@ -14,7 +14,7 @@ public:
     ~Str(){
         delete [] s;
     }
-public:
+private:
     char* s;
 };
 //================================================================
@@ -28,16 +28,15 @@ int main(int argc, char const *argv[]){
     for (unsigned i = 0; i < c.size(); ++i){
         cout << c[i];
         c[i] = (i+65);
-    } c += "\n\0";
+    } c += "YZ\n\0";
     cout << endl;
-    c.pri(); // print modified c
+    cout << c << endl;
 
     c.resize(3);
-    c.pri();
+    cout << c << endl;
     c.resize(4);
     c += 'D';
-    c.pri();
-
+    cout << c << endl;
     c += c;
     cout << c << endl;
     return 0;
