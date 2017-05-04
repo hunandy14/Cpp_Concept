@@ -11,7 +11,9 @@ using namespace std;
 class Str{
 public:
     Str(){}
-    ~Str(){}
+    ~Str(){
+        delete [] s;
+    }
 public:
     char* s;
 };
@@ -35,7 +37,9 @@ int main(int argc, char const *argv[]){
     c.resize(4);
     c += 'D';
     c.pri();
-    return 0;
+
+    c += c;
+    cout << c << endl;
     return 0;
 }
 //================================================================
