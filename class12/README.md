@@ -21,4 +21,4 @@ char s = a;
 
 只考慮 int double folat 做一個 template 物件，包含基本op操作。  
 
-![](https://github.com/hunandy14/Cpp_Concept/tree/master/class12/Num.png)
+![](https://github.com/hunandy14/Cpp_Concept/blob/master/class12/Num.png)
