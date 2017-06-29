@@ -14,47 +14,34 @@ public:
     virtual void fun(){
         cout << "num=" << num << endl;
     }
-    friend void fun2();
 protected:
     int num;
 };
-
-
 class B: public A {
 public:
-    B(int b): A(b){}
+    B(int b=1): A(b){}
     void fun(){
         cout << "Bnum=" << num << endl;
     }
     int num2;
 };
-
 class C: public A {
 public:
-    C(int c): A(c){}
+    C(int c=2): A(c){}
     void fun(){
         cout << "Cnum=" << num << endl;
     }
     int num3;
 };
 
-// void fun2(A & a){
-//     cout << "a.num=" << a.num << endl;
-// }
 
 void fun(A* p){
     p->fun();
 }
 //================================================================
 int main(int argc, char const *argv[]){
-    A* p1 = new B(1);
-    A* p2 = new C(2);
-    
-    fun(p1);
-    fun(p2);
-    
-
-
+    fun(new B);
+    fun(new C);
     return 0;
 }
 //================================================================
