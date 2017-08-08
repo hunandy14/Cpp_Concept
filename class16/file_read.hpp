@@ -30,7 +30,11 @@ inline std::ifstream& operator>>(
     is.read((char*)&obj, sizeof(obj));
     return is;
 }
+#pragma pack() // 恢復對齊為預設
+
+
 // 圖片資訊 (BITMAPINFOHEADER)
+#pragma pack(2) // 調整對齊
 struct BmpInfoHeader{
     uint32_t biSize=40;
     uint32_t biWidth;
@@ -38,6 +42,7 @@ struct BmpInfoHeader{
     uint16_t biPlanes=1; // 1=defeaul, 0=custom
     uint16_t biBitCount;
     uint32_t biCompression=0;
+    uint32_t biSizeImage;
     uint32_t biXPelsPerMeter=0; // 72dpi=2835, 96dpi=3780
     uint32_t biYPelsPerMeter=0; // 120dpi=4724, 300dpi=11811
     uint32_t biClrUsed=0;
